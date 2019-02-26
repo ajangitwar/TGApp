@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Dashboard Dark Edition by Creative Tim
+   Dashboard
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -21,70 +21,9 @@
 
 <body class="dark-edition">
   <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="black" data-image="../assets/img/sidebar-2.jpg">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-        Tip 2: you can also add an image using data-image tag
-    -->
-      <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
-        </a>
-      </div>
-      <div class="sidebar-wrapper">
-        <ul class="nav">
-          <li class="nav-item active  ">
-            <a class="nav-link" href="./dashboard.html">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
-              <i class="material-icons">person</i>
-              <p>User Profile</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
-              <i class="material-icons">content_paste</i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
-              <i class="material-icons">library_books</i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">location_ons</i>
-              <p>Maps</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <!-- <li class="nav-item active-pro ">
-                <a class="nav-link" href="./upgrade.html">
-                    <i class="material-icons">unarchive</i>
-                    <p>Upgrade to PRO</p>
-                </a>
-            </li> -->
-        </ul>
-      </div>
-    </div>
+   <?php include("sidebar.php") ?> 
+   
     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
@@ -111,9 +50,9 @@
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="javascript:void(0)">
-                  <i class="material-icons">dashboard</i>
+                  <i class="material-icons fa-5x">add</i>
                   <p class="d-lg-none d-md-block">
-                    Stats
+                    Add TG
                   </p>
                 </a>
               </li>
@@ -134,7 +73,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0)">
+                <a class="nav-link" href="user.php">
                   <i class="material-icons">person</i>
                   <p class="d-lg-none d-md-block">
                     Account
@@ -148,8 +87,9 @@
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-xl-4 col-lg-12">
+              <a href="./tables.php">
               <div class="card card-chart">
                 <div class="card-header card-header-success">
                   <div class="ct-chart" id="dailySalesChart"></div>
@@ -164,7 +104,7 @@
                     <i class="material-icons">access_time</i> updated 4 minutes ago
                   </div>
                 </div>
-              </div>
+              </div></a>
             </div>
             <div class="col-xl-4 col-lg-12">
               <div class="card card-chart">
@@ -198,8 +138,212 @@
                 </div>
               </div>
             </div>
+          </div> -->
+          <div class="row">
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <a href="tables.php">
+                <div class="card-header card-header-danger ">
+                  <!-- <div class="card-icon">
+                    <i class="material-icons">content_copy</i>
+                  </div> -->
+                  <h3 class="card-title" style="color: white;">Dr. Ramanand Samdekar
+                    
+                  </h3>
+                  <h2 class="card-category" style="color: black;">40/50
+                  <small>GB</small>
+                </h2>
+                </div>
+                </a>
+                <div class="card-footer">
+                  <a href="user.php" style="color: white;">
+                    <div class="stats">
+                    <i class="material-icons">person</i>
+                     Teacher Profile >>>
+                  </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <a href="tables.php">
+                <div class="card-header card-header-danger ">
+                  <!-- <div class="card-icon">
+                    <i class="material-icons">content_copy</i>
+                  </div> -->
+                  <h3 class="card-title" style="color: white;">Dr. Ramanand Samdekar
+                    
+                  </h3>
+                  <h2 class="card-category" style="color: black;">40/50
+                  <small>GB</small>
+                </h2>
+                </div>
+                </a>
+                <div class="card-footer">
+                  <a href="user.php" style="color: white;">
+                    <div class="stats">
+                    <i class="material-icons">person</i>
+                     Teacher Profile >>>
+                  </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <a href="tables.php">
+                <div class="card-header card-header-danger ">
+                  <!-- <div class="card-icon">
+                    <i class="material-icons">content_copy</i>
+                  </div> -->
+                  <h3 class="card-title" style="color: white;">Dr. Ramanand Samdekar
+                    
+                  </h3>
+                  <h2 class="card-category" style="color: black;">40/50
+                  <small>GB</small>
+                </h2>
+                </div>
+                </a>
+                <div class="card-footer">
+                  <a href="user.php" style="color: white;">
+                    <div class="stats">
+                    <i class="material-icons">person</i>
+                     Teacher Profile >>>
+                  </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <a href="tables.php">
+                <div class="card-header card-header-danger ">
+                  <!-- <div class="card-icon">
+                    <i class="material-icons">content_copy</i>
+                  </div> -->
+                  <h3 class="card-title" style="color: white;">Dr. Ramanand Samdekar
+                    
+                  </h3>
+                  <h2 class="card-category" style="color: black;">40/50
+                  <small>GB</small>
+                </h2>
+                </div>
+                </a>
+                <div class="card-footer">
+                  <a href="user.php" style="color: white;">
+                    <div class="stats">
+                    <i class="material-icons">person</i>
+                     Teacher Profile >>>
+                  </div>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="row">
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <a href="tables.php">
+                <div class="card-header card-header-danger ">
+                  <!-- <div class="card-icon">
+                    <i class="material-icons">content_copy</i>
+                  </div> -->
+                  <h3 class="card-title" style="color: white;">Dr. Ramanand Samdekar
+                    
+                  </h3>
+                  <h2 class="card-category" style="color: black;">40/50
+                  <small>GB</small>
+                </h2>
+                </div>
+                </a>
+                <div class="card-footer">
+                  <a href="user.php" style="color: white;">
+                    <div class="stats">
+                    <i class="material-icons">person</i>
+                     Teacher Profile >>>
+                  </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <a href="tables.php">
+                <div class="card-header card-header-danger ">
+                  <!-- <div class="card-icon">
+                    <i class="material-icons">content_copy</i>
+                  </div> -->
+                  <h3 class="card-title" style="color: white;">Dr. Ramanand Samdekar
+                    
+                  </h3>
+                  <h2 class="card-category" style="color: black;">40/50
+                  <small>GB</small>
+                </h2>
+                </div>
+                </a>
+                <div class="card-footer">
+                  <a href="user.php" style="color: white;">
+                    <div class="stats">
+                    <i class="material-icons">person</i>
+                     Teacher Profile >>>
+                  </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <a href="tables.php">
+                <div class="card-header card-header-danger ">
+                  <!-- <div class="card-icon">
+                    <i class="material-icons">content_copy</i>
+                  </div> -->
+                  <h3 class="card-title" style="color: white;">Dr. Ramanand Samdekar
+                    
+                  </h3>
+                  <h2 class="card-category" style="color: black;">40/50
+                  <small>GB</small>
+                </h2>
+                </div>
+                </a>
+                <div class="card-footer">
+                  <a href="user.php" style="color: white;">
+                    <div class="stats">
+                    <i class="material-icons">person</i>
+                     Teacher Profile >>>
+                  </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <a href="tables.php">
+                <div class="card-header card-header-danger ">
+                  <!-- <div class="card-icon">
+                    <i class="material-icons">content_copy</i>
+                  </div> -->
+                  <h3 class="card-title" style="color: white;">Dr. Ramanand Samdekar
+                    
+                  </h3>
+                  <h2 class="card-category" style="color: black;">40/50
+                  <small>GB</small>
+                </h2>
+                </div>
+                </a>
+                <div class="card-footer">
+                  <a href="user.php" style="color: white;">
+                    <div class="stats">
+                    <i class="material-icons">person</i>
+                     Teacher Profile >>>
+                  </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="row">
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
               <div class="card card-stats">
                 <div class="card-header card-header-warning card-header-icon">
@@ -267,8 +411,11 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row">
+          </div> -->
+
+<!-- Something -->
+
+          <!-- <div class="row">
             <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
@@ -558,12 +705,12 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <footer class="footer">
         <div class="container-fluid">
-          <nav class="float-left">
+         <!--  <nav class="float-left">
             <ul>
               <li>
                 <a href="https://www.creative-tim.com">
@@ -586,13 +733,15 @@
                 </a>
               </li>
             </ul>
-          </nav>
+          </nav> -->
           <div class="copyright float-right" id="date">
             , made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+            <a href="https://www.creative-tim.com" target="_blank">techBAAS Prolific Devlopers</a> for a better web.
           </div>
         </div>
       </footer>
+
+
       <script>
         const x = new Date().getFullYear();
         let date = document.getElementById('date');
@@ -640,30 +789,32 @@
             <img src="../assets/img/sidebar-4.jpg" alt="">
           </a>
         </li>
-        <li class="button-container">
+      <!--   <li class="button-container">
           <a href="https://www.creative-tim.com/product/material-dashboard-dark" target="_blank" class="btn btn-primary btn-block">Free Download</a>
         </li>
-        <!-- <li class="header-title">Want more components?</li>
+        <li class="header-title">Want more components?</li>
             <li class="button-container">
                 <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
                   Get the pro version
                 </a>
-            </li> -->
+            </li>
         <li class="button-container">
           <a href="https://demos.creative-tim.com/material-dashboard-dark/docs/2.0/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block">
             View Documentation
           </a>
-        </li>
-        <li class="button-container github-star">
+        </li> -->
+      <!--   <li class="button-container github-star">
           <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard/tree/dark-edition" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
-        </li>
-        <li class="header-title">Thank you for 95 shares!</li>
-        <li class="button-container text-center">
+        </li> -->
+        <li class="header-title">Thank you for changing the theme</li>
+        <!-- <li class="button-container text-center">
           <button id="twitter" class="btn btn-round btn-twitter"><i class="fa fa-twitter"></i> &middot; 45</button>
           <button id="facebook" class="btn btn-round btn-facebook"><i class="fa fa-facebook-f"></i> &middot; 50</button>
           <br>
           <br>
-        </li>
+        </li> -->
+        <div class="clearfix"></div>
+        <li> </li>
       </ul>
     </div>
   </div>
