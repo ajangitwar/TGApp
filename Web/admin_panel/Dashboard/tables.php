@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php $page = 'Allot Student';?><!DOCTYPE html>
 <html lang="en">
 
 <head>
