@@ -99,7 +99,7 @@ public class StudentHome extends AppCompatActivity
             FragmentManager fragmentmanager = getSupportFragmentManager();
             FragmentTransaction ft = fragmentmanager.beginTransaction();
 
-            ft.replace(R.id.fragment_container,fragment);
+            ft.replace(R.id.main_container,fragment);
 
             ft.commit();
         }

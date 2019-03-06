@@ -3,37 +3,53 @@ package com.example.studentapp;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import static com.example.studentapp.Profile.int_items;
 
 
-public class Profile extends Fragment {
-    View view;
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_profile,container,false);
+public class Profile extends  Fragment{
 
-        TabLayout tabLayout = view.findViewById(R.id.tablayout_id);
-        ViewPager viewPager = view.findViewById(R.id.viewpager_id);
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getFragmentManager());
+    public  static TabLayout tabLayout;
+    public  static ViewPager viewPager;
+    public  static int int_items= 5;
 
-        adapter.AddFragment(new PersonalFragment(),"Personal");
-        adapter.AddFragment(new EducationFragment(),"Education");
-        adapter.AddFragment(new FamilyFragment(),"Family");
 
-        viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
-        getActivity().setTitle("Profile");
-        return view;
+
+    public Profile() {
+        // Required empty public constructor
     }
 
+
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+
+        View v = inflater.inflate(R.layout.fragment_profile,null);
+        tabLayout=(TabLayout)v.findViewById(R.id.tabs);
+        viewPager=(ViewPager)v.findViewById(R.id.viewpager);
+        //set an adpater
+
+        viewPager.setAdapter(new MyAdapter( getChildFragmentManager()));
+
+        tabLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                tabLayout.setupWithViewPager(viewPager);
+            }
+        });
+        getActivity().setTitle("Profile");
+        return v;
     }
 }
