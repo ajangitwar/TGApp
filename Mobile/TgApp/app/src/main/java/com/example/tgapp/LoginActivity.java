@@ -47,11 +47,8 @@ public class LoginActivity extends AppCompatActivity {
                 // Perform action on click
                 Toast.makeText(LoginActivity.this,"Successfully Login",Toast.LENGTH_SHORT).show();
                 Intent activityChangeIntent = new Intent(LoginActivity.this, tg_home.class);
-
-                // currentContext.startActivity(activityChangeIntent);
-
-
-                LoginActivity.this.startActivity(activityChangeIntent);
+                startActivity(activityChangeIntent);
+                finish();
             }
         });
 
