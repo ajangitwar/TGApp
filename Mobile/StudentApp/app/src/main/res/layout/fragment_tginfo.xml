@@ -14,14 +14,29 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp">
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_centerHorizontal="true"
-
-                android:src="@drawable/ic_person"/>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_span="2"
+                android:gravity="center"
+                android:text="Abhishek Jangitwar"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
 
@@ -36,24 +51,6 @@
                 android:layout_height="wrap_content"
                 android:stretchColumns="*">
 
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:layout_span="2"
-                        android:gravity="center"
-                        android:textColor="#000"
-                        android:text="Abhishek Jangitwar" />
-                </TableRow>
-
-
                 <TableRow
                     android:padding="5dp"
                     android:layout_width="match_parent"
@@ -64,13 +61,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:text="Branch" />
+                        android:text="Branch"
+                        android:textColor="#000"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/textView15"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:layout_width="181dp"
+                        android:layout_height="49dp"
+                        android:text="Computer Science And Engineering"
+                        android:textColor="#000"
+                        android:textSize="18sp" />
                 </TableRow>
 
                 <TableRow
@@ -83,13 +84,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
+                        android:textColor="#000"
+                        android:textSize="18sp"
                         android:text="Semester" />
 
                     <TextView
                         android:id="@+id/textView16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="6th"
+                        android:textColor="#000"
+                        android:textSize="18sp" />
                 </TableRow>
 
                 <TableRow
@@ -102,13 +107,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
+                        android:textColor="#000"
+                        android:textSize="18sp"
                         android:text="Year" />
 
                     <TextView
                         android:id="@+id/textView17"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:text="2019" />
                 </TableRow>
 
                 <TableRow
@@ -120,6 +129,8 @@
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:textSize="18sp"
                         android:layout_marginLeft="15dp"
                         android:text="Mobile" />
 
@@ -127,7 +138,9 @@
                         android:id="@+id/textView1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:text="8975889364" />
                 </TableRow>
 
                 <TableRow
@@ -139,15 +152,19 @@
                         android:id="@+id/teView21"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:textSize="18sp"
                         android:layout_marginLeft="15dp"
                         android:text="Address" />
 
                     <TextView
                         android:id="@+id/textVw17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
                         android:inputType="textPostalAddress"
-                        android:text="TextView" />
+                        android:text="41, Balaji Nagar Punapur"
+                        android:textColor="#000"
+                        android:textSize="18sp" />
                 </TableRow>
 
                 <TableRow
@@ -159,6 +176,8 @@
                         android:id="@+id/teVew21"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:textSize="18sp"
                         android:layout_marginLeft="15dp"
                         android:text="Year" />
 
@@ -166,6 +185,8 @@
                         android:id="@+id/teView17"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:textSize="18sp"
                         android:text="TextView" />
                 </TableRow>
 
@@ -178,6 +199,8 @@
                         android:id="@+id/tView21"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:textSize="18sp"
                         android:layout_marginLeft="15dp"
                         android:text="Year" />
 
@@ -185,6 +208,8 @@
                         android:id="@+id/xtView17"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:textSize="18sp"
                         android:text="TextView" />
                 </TableRow>
 
@@ -198,12 +223,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
+                        android:textColor="#000"
+                        android:textSize="18sp"
                         android:text="Year" />
 
                     <TextView
                         android:id="@+id/textVie17"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:textSize="18sp"
                         android:text="TextView" />
                 </TableRow>
             </TableLayout>
