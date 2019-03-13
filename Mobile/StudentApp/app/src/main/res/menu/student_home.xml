@@ -6,5 +6,6 @@
         android:orderInCategory="100"
         android:title="Edit Profile"
         android:icon="@drawable/ic_edit"
+        android:visible="false"
         app:showAsAction="ifRoom" />
 </menu>

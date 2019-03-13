@@ -4,56 +4,49 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
-//class ListContent extends AppCompatActivity{
-//    ListView listView;
-//    List list = new ArrayList();
-//    ArrayAdapter<> adapter;
-//
-//    public ListContent() {
-//        setContentView(R.layout.fragment_studentlist);
-//
-//        listView = findViewById(R.id.list_view);
-//
-//        for (int i = 0; i < 15 ; i++ ){
-//            list.add("Orange");
-//        }
-//
-//        adapter = new ArrayAdapter(ListContent.this ,android.R.layout.simple_list_item_1,list);
-//        listView.setAdapter(adapter);
-//    }
-//}
-
 public class StudentList extends Fragment{
-
+    RecyclerView myrecyclerview;
+    List<StudentModal> lstContact;
+    AdapterTest adapterTest;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view  = inflater.inflate(R.layout.fragment_studentlist,container, false);
-
-        ArrayList<String> list_item = new ArrayList<String>();
-
-        for (int i = 0; i < 20 ; i++ ) list_item.add("Abhishek Jangitwar"+(i+1));
-
-        ListView listView = (ListView) view.findViewById(R.id.list_view);
-
-        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(
-                getActivity(),
-                android.R.layout.simple_list_item_1,
-                list_item
-        );
-
-        listView.setAdapter(listViewAdapter);
+        adapterTest = new AdapterTest(getContext(),lstContact);
+        myrecyclerview = (RecyclerView) view.findViewById(R.id.recyclesStd);
+        myrecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+                  getReports();
+         myrecyclerview.setAdapter(adapterTest);
         return view;
+    }
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        lstContact = new ArrayList<>();
     }
 
     @Override
@@ -61,6 +54,49 @@ public class StudentList extends Fragment{
         super.onViewCreated(view, savedInstanceState);
 
         getActivity().setTitle("Student List");
+    }
+
+    void getReports(){
+
+        final StringRequest stringRequest = new StringRequest(Request.Method.GET,
+                "http://192.168.42.198/Reaper/getStudent.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        JSONObject jsonObject = null;
+                        Log.d("data",response);
+                        try {
+                            jsonObject = new JSONObject(response);
+                            JSONArray jsonArray = jsonObject.getJSONArray("studentObj");
+
+                            lstContact = new ArrayList<>();
+                            for(int i=0;i<jsonArray.length();i++){
+                                JSONObject obj = jsonArray.getJSONObject(i);
+                                String SID = obj.getString("SID");
+                                String fullname = obj.getString("fullname");
+                                String year = obj.getString("year");
+                                String semester = obj.getString("semester");
+
+
+                                StudentModal c = new StudentModal();
+                                c.setSID(obj.getInt("SID"));
+                                c.setFullname(obj.getString("fullname"));
+                                c.setYear(obj.getString("year"));
+                                c.setSemester(obj.getString("semester"));
+                                lstContact.add(c);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        requestQueue.add(stringRequest);
     }
 
 }
