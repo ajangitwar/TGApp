@@ -59,7 +59,7 @@ public class StudentList extends Fragment{
     void getReports(){
 
         final StringRequest stringRequest = new StringRequest(Request.Method.GET,
-                "http://192.168.42.198/Reaper/getStudent.php",
+                "http://192.168.42.159/Reaper/getStudent.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -85,6 +85,8 @@ public class StudentList extends Fragment{
                                 c.setSemester(obj.getString("semester"));
                                 lstContact.add(c);
                             }
+                            AdapterTest recyclerViewAdapter = new AdapterTest(getContext(),lstContact);
+                            myrecyclerview.setAdapter(recyclerViewAdapter);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

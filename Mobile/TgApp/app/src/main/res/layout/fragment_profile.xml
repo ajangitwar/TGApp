@@ -34,7 +34,7 @@
                 android:layout_marginRight="0dp"
                 android:layout_span="2"
                 android:gravity="center"
-                android:text="Abhishek Jangitwar"
+                android:text=""
                 android:textColor="#000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -94,7 +94,7 @@
                         android:id="@+id/semester"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="6th"
+                        android:text=""
                         android:textColor="#000"
                         android:textSize="18sp" />
                 </TableRow>
