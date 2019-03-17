@@ -1,14 +1,20 @@
 <?php
 	include('dbconnection.php');
-	$sid = $_POST["sid"];
+	$id = $_POST["allot"];
+	// echo "hello";
 	if(isset($_POST['submit'])){
 		if(isset($_POST['check'])){
-			$query = "UPDATE `student` SET `alloted` = '1' WHERE sid ='$sid';";
+			$query = "UPDATE `student` SET `alloted` = '1' WHERE sid ='".$_POST["sid"]."';";
 			if(mysqli_query($db,$query)){
-            	header("location: Allotment.php");			
-			}
-			else{
-				header("location: Allotment.php");
+				if(isset($id)){
+					$q = "UPDATE `student` SET `TID` = '$id';";
+					if(mysqli_query($db,$q)){
+		            	header("location: Allotment.php");			
+					}
+					else{
+						header("location: Allotment.php");
+					}
+				}
 			}
 		}
 	}

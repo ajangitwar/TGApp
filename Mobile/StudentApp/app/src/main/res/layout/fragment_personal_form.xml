@@ -50,16 +50,30 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlayoutaddress"
+                android:id="@+id/inputlayoutPaddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
 
                 <EditText
-                    android:id="@+id/address"
+                    android:id="@+id/Paddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Address"
+                    android:hint="Parmanent Address"
+                    android:inputType="text" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inputlayoutTaddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true">
+
+                <EditText
+                    android:id="@+id/Taddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Temporary Address"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
@@ -115,85 +129,72 @@
                     android:id="@+id/geer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="gender"
+                    android:hint="Gender"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlayoutgder"
+                android:id="@+id/inputlayoutMob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
 
                 <EditText
-                    android:id="@+id/ender"
+                    android:id="@+id/mob"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="gender"
+                    android:hint="Mobile No."
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/inpuayoutgender"
+                android:id="@+id/inpuayoutheight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
 
                 <EditText
-                    android:id="@+id/gder"
+                    android:id="@+id/height"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="gender"
+                    android:hint="Height"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlayoutgender"
+                android:id="@+id/inputlayoutweight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
 
                 <EditText
-                    android:id="@+id/gender"
+                    android:id="@+id/weight"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="gender"
+                    android:hint="Weight"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlautgender"
+                android:id="@+id/inputlayoutuid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
 
                 <EditText
-                    android:id="@+id/geder"
+                    android:id="@+id/uid"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="gender"
+                    android:hint="Aadhar Card No."
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlayoutder"
+                android:id="@+id/inputlayoutpan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
 
                 <EditText
-                    android:id="@+id/gnder"
+                    android:id="@+id/pan"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="gender"
-                    android:inputType="text" />
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlayoender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:errorEnabled="true">
-
-                <EditText
-                    android:id="@+id/gendr"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="gender"
+                    android:hint="PAN No."
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
@@ -201,9 +202,9 @@
                 android:id="@+id/subbtn"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="120dp"
-                android:layout_gravity="end"
                 android:layout_height="wrap_content"
-                android:text="Update Profile" />
+                android:layout_gravity="end"
+                android:text="Submit" />
 
         </LinearLayout>
     </RelativeLayout>

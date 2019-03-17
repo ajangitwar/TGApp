@@ -36,164 +36,80 @@
             android:orientation="vertical">
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlayoutfullname"
+                android:id="@+id/fathername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
 
                 <EditText
-                    android:id="@+id/fullname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Full Name"
+                    android:hint="Father Name"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlayoutaddress"
+                android:id="@+id/fmob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
 
                 <EditText
-                    android:id="@+id/address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Address"
+                    android:hint="Father Mobile No."
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlayoutemail"
+                android:id="@+id/focc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
 
                 <EditText
-                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress" />
+                    android:hint="Father occupation"
+                    android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlayoutbgroup"
+                android:id="@+id/mname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
 
                 <EditText
-                    android:id="@+id/bgroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Blood group"
+                    android:hint="Mother Name"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlayoutdob"
+                android:id="@+id/mmob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
 
                 <EditText
-                    android:id="@+id/dob"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Date of Birth"
-                    android:inputType="date" />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlayouender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:errorEnabled="true">
-
-                <EditText
-                    android:id="@+id/geer"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="gender"
+                    android:hint="Mother Mobile No."
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
+
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlayoutgder"
+                android:id="@+id/mocc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true">
 
                 <EditText
-                    android:id="@+id/ender"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="gender"
-                    android:inputType="text" />
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/inpuayoutgender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:errorEnabled="true">
-
-                <EditText
-                    android:id="@+id/gder"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="gender"
-                    android:inputType="text" />
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlayoutgender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:errorEnabled="true">
-
-                <EditText
-                    android:id="@+id/gender"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="gender"
-                    android:inputType="text" />
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlautgender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:errorEnabled="true">
-
-                <EditText
-                    android:id="@+id/geder"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="gender"
-                    android:inputType="text" />
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlayoutder"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:errorEnabled="true">
-
-                <EditText
-                    android:id="@+id/gnder"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="gender"
-                    android:inputType="text" />
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/inputlayoender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:errorEnabled="true">
-
-                <EditText
-                    android:id="@+id/gendr"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="gender"
+                    android:hint="Mother occupation"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
 
@@ -203,7 +119,7 @@
                 android:layout_width="120dp"
                 android:layout_gravity="end"
                 android:layout_height="wrap_content"
-                android:text="Update Profile" />
+                android:text="Submit" />
 
         </LinearLayout>
     </RelativeLayout>

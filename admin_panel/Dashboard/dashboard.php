@@ -44,9 +44,11 @@
               $row = mysqli_fetch_array($result);
               $count=$row[0];
               $titles =  "SELECT Fullname FROM `teacher`";
+              $tid = "SELECT TID FROM `teacher`";
               $title = mysqli_query($db,$titles);
+              $tid = mysqli_query($db,$tid);
               for ($x = 1; $x <= $count; $x++){
-                while($name = mysqli_fetch_assoc($title)){
+                while($name = mysqli_fetch_assoc($title) and $id = mysqli_fetch_assoc($tid)){
             ?>
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
                           <div class="card card-stats">
@@ -56,6 +58,7 @@
                               <h3 class="card-title" style="color: white;">
                                 <?php
                                   echo "<b>".$name['Fullname']."</b>";
+                                  // echo $id['TID'];
                                 ?>
                               </h3>
                             </div>
@@ -67,13 +70,18 @@
                                  Teacher Profile
                                </div>
                              </a>
-                               <br> 
-                             <a href="Allotment.php">
-                               <div class="stats">
-                                <i class="material-icons">touch_app</i>
-                                 Allotment of student
-                              </div>
-                              </a>
+                             <form action="dballotment.php" method="POST">
+                             <!-- <button type="submit" name="tid" class="btn btn-warning" style="width:auto;height:20%;"> -->
+                              <a href="Allotment.php" >
+                                <div class="">
+                                  <input type="hidden" name="allot" value="<?php echo "{$id['TID']}" ?>">
+                                  <i class="material-icons">touch_app</i>
+                                   <span>Allotment</span>
+                                </div>
+                            </a>
+                              <!-- </button> -->
+                              </form>
+                              
                             </div>
                           </div>
                         </div>
@@ -96,6 +104,7 @@
       </script>
     </div>
   </div>
+   
   <div class="fixed-plugin">
     <div class="dropdown show-dropdown">
       <a href="#" data-toggle="dropdown">
