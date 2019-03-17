@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="18dp"
                     android:textStyle="bold"
-                    android:text="General Institude:"/>
+                    android:text="General Institute:"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -115,7 +115,7 @@
                         android:id="@+id/X"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="10th Institude Name"
+                        android:hint="10th Institute Name"
                         android:inputType="text" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -157,7 +157,7 @@
                         android:id="@+id/XII"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="12th Institude Name"
+                        android:hint="12th Institute Name"
                         android:inputType="text" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -234,117 +234,21 @@
                         android:id="@+id/BE"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hint="B.E. Institude Name"
+                        android:hint="B.E. Institute Name"
                         android:inputType="text" />
                 </android.support.design.widget.TextInputLayout>
+
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/inputlayoutfirst"
+                    android:id="@+id/inpuayoutBranch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:errorEnabled="true">
 
                     <EditText
-                        android:id="@+id/firstsem"
+                        android:id="@+id/Branch"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hint="1st semester SGPA"
-                        android:inputType="text" />
-                </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/inputlayoutsecond"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:errorEnabled="true">
-
-                    <EditText
-                        android:id="@+id/secondsem"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:hint="2nd semester SGPA"
-                        android:inputType="text" />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/inputlayoutthird"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:errorEnabled="true">
-
-                    <EditText
-                        android:id="@+id/thirdsem"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:hint="3rd semester SGPA"
-                        android:inputType="text" />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/inputlayoutfour"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:errorEnabled="true">
-
-                    <EditText
-                        android:id="@+id/foursem"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:hint="4th semester SGPA"
-                        android:inputType="text" />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/inputlayoutfive"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:errorEnabled="true">
-
-                    <EditText
-                        android:id="@+id/fivesem"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:hint="5th semester SGPA"
-                        android:inputType="text" />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/inputlayoutsix"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:errorEnabled="true">
-
-                    <EditText
-                        android:id="@+id/sixsem"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:hint="6th semester SGPA"
-                        android:inputType="text" />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/inputlayoutseven"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:errorEnabled="true">
-
-                    <EditText
-                        android:id="@+id/sevensem"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:hint="7th semester SGPA"
-                        android:inputType="text" />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/inputlayouteight"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:errorEnabled="true">
-
-                    <EditText
-                        android:id="@+id/eightsem"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:hint="8th semester SGPA"
+                        android:hint="Branch Name"
                         android:inputType="text" />
                 </android.support.design.widget.TextInputLayout>
 
