@@ -39,7 +39,7 @@ public class StudentLogin extends AppCompatActivity {
     }
     private void Login() {
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.43.34/android/v1/StudentLogin.php", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.42.221/android/v1/StudentLogin.php", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 

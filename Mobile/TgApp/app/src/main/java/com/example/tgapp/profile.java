@@ -26,20 +26,19 @@ import org.json.JSONObject;
 
 public class profile extends Fragment {
 
-    RelativeLayout relativeLayout;
-    TableRow tr;
-    TextView sem,year,full,sid;
+    TextView tid,fullname,email,mob,salutation;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile,container, false);
-    ParseData();
-        relativeLayout  = view.findViewById(R.id.relative);
-        tr = view.findViewById(R.id.tb1);
-        sem = view.findViewById(R.id.semester);
-        year = view.findViewById(R.id.year);
-        full = view.findViewById(R.id.fullname);
-        sid = view.findViewById(R.id.SID);
+        ParseData();
+
+        tid = view.findViewById(R.id.tid);
+        email = view.findViewById(R.id.email);
+        fullname = view.findViewById(R.id.fullname);
+        salutation = view.findViewById(R.id.salu);
+        mob = view.findViewById(R.id.mob);
+
         return view;
     }
 
@@ -51,22 +50,23 @@ public class profile extends Fragment {
     }
 
     public void ParseData(){
-        String URL = "http://192.168.42.159/Reaper/getStudent.php";
+        String URL = "http://192.168.42.209/Reaper/getTeacher.php";
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
 
-                    JSONArray jsonArray = jsonObject.getJSONArray("studentObj");
+                    JSONArray jsonArray = jsonObject.getJSONArray("teacherObj");
                     JSONObject data = jsonArray.getJSONObject(0);
 
-                    sem.setText(String.valueOf(data.getInt("semester")));
-                    full.setText(data.getString("fullname"));
-                    //year.setText(data.getInt("year"));
-                   // sid.setText(data.getInt("SID"));
+                    tid.setText(String.valueOf(data.getInt("TID")));
+                    salutation.setText(data.getString("salutation"));
+                    fullname.setText(data.getString("fullname"));
+                    email.setText(data.getInt("email"));
+                    mob.setText(data.getInt("mobile"));
 
-                    Toast.makeText(getContext(), String.valueOf(data.getString("year")), Toast.LENGTH_SHORT).show();
+
 
                 } catch (JSONException e) {
                     Toast.makeText(getContext(), "exception ala", Toast.LENGTH_SHORT).show();

@@ -5,243 +5,125 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
 
-
-        <RelativeLayout
-
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="30dp">
+            android:layout_margin="5dp"
+            android:padding="5dp">
 
-            <TextView
-                android:id="@+id/fullname"
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="0dp"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:layout_marginRight="0dp"
-                android:layout_span="2"
-                android:gravity="center"
-                android:text=""
-                android:textColor="#000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
+                android:background="@color/design_default_color_primary">
 
+                <TextView
+                    android:id="@+id/tid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="TextView"
+                    android:textColor="#fff"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mob" />
 
-        <RelativeLayout
-            android:id="@+id/relative"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/salu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="33dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="Prof."
+                    android:textColor="#fff"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/fullname"
+                    app:layout_constraintEnd_toStartOf="@+id/fullname"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
 
-            <TableLayout
-                android:padding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:stretchColumns="*">
+                <TextView
+                    android:id="@+id/fullname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="96dp"
+                    android:layout_marginRight="96dp"
+                    android:text="Teacher name"
+                    android:textColor="#fff"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
-                <TableRow
-                    android:id="@+id/tb1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="5dp">
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginLeft="48dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="TextView"
+                    android:textColor="#fff"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tid"
+                    app:layout_constraintEnd_toStartOf="@+id/tid"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fullname" />
 
-                    <TextView
-                        android:id="@+id/textView19"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:text="Branch"
-                        android:textColor="#000"
-                        android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/mob"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="36dp"
 
-                    <TextView
-                        android:id="@+id/textView15"
-                        android:layout_width="181dp"
-                        android:layout_height="49dp"
-                        android:text="Computer Science And Engineering"
-                        android:textColor="#000"
-                        android:textSize="18sp" />
-                </TableRow>
+                    android:layout_marginRight="36dp"
+                    android:text="TextView"
+                    android:textColor="#fff"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tid"
+                    app:layout_constraintTop_toBottomOf="@+id/fullname" />
+            </android.support.constraint.ConstraintLayout>
 
-                <TableRow
-                    android:padding="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:text="Semester"
-                        android:textColor="#000"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/semester"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:textColor="#000"
-                        android:textSize="18sp" />
-                </TableRow>
-
-                <TableRow
-                    android:padding="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <TextView
-                        android:id="@+id/textView21"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:text="Year" />
-
-                    <TextView
-                        android:id="@+id/year"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:text="2019" />
-                </TableRow>
-
-                <TableRow
-                    android:padding="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:layout_marginLeft="15dp"
-                        android:text="Mobile" />
-
-                    <TextView
-                        android:id="@+id/textView1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:text="8975889364" />
-                </TableRow>
-
-                <TableRow
-                    android:padding="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <TextView
-                        android:id="@+id/teView21"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:layout_marginLeft="15dp"
-                        android:text="Address" />
-
-                    <TextView
-                        android:id="@+id/textVw17"
-                        android:layout_width="100dp"
-                        android:layout_height="50dp"
-                        android:inputType="textPostalAddress"
-                        android:text="41, Balaji Nagar Punapur"
-                        android:textColor="#000"
-                        android:textSize="18sp" />
-                </TableRow>
-
-                <TableRow
-                    android:padding="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <TextView
-                        android:id="@+id/teVew21"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:layout_marginLeft="15dp"
-                        android:text="Roll No." />
-
-                    <TextView
-                        android:id="@+id/SID"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:text="TextView" />
-                </TableRow>
-
-                <TableRow
-                    android:padding="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <TextView
-                        android:id="@+id/tView21"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:layout_marginLeft="15dp"
-                        android:text="Year" />
-
-                    <TextView
-                        android:id="@+id/xtView17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:text="TextView" />
-                </TableRow>
-
-                <TableRow
-                    android:padding="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <TextView
-                        android:id="@+id/textVie"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:text="Year" />
-
-                    <TextView
-                        android:id="@+id/textVie17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:text="TextView" />
-                </TableRow>
-            </TableLayout>
-
-
-        </RelativeLayout>
-
+        </android.support.v7.widget.CardView>
     </LinearLayout>
 
 </ScrollView>

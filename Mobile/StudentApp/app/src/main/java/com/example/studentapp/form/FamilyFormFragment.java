@@ -28,7 +28,7 @@ public class FamilyFormFragment extends Fragment {
 
     Button button;
     TextInputLayout Faname,Famob,Faocc,Maname,Mamob,Maocc;
-    public static final String url = "http://192.168.43.34/android/Student/InsertFamily.php";
+    public static final String url = "http://192.168.42.221/android/Student/InsertFamily.php";
     AlertDialog.Builder builder;
     AwesomeValidation awesomeValidation;
 
@@ -95,7 +95,7 @@ public class FamilyFormFragment extends Fragment {
                 }){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap<String,String>();
                 params.put("FName",FName);
                 params.put("FMobNo",FMobNo);
                 params.put("FOcc",FOcc);

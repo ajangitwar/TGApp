@@ -33,14 +33,6 @@
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-            android:id="@+id/nav_send"
-            android:icon="@drawable/ic_menu_send"
-            android:title="Send" />
-            <item
                 android:id="@+id/tg_logout"
                 android:icon="@drawable/ic_exit_to_app_"
                 android:title="Logout" />

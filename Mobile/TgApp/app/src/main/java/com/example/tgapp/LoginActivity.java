@@ -32,22 +32,6 @@ public class LoginActivity extends AppCompatActivity {
             window.setStatusBarColor(this.getResources().getColor(R.color.navColor));
         }
 
-//        prefConfig = new PrefConfig(this);
-//        if (findViewById(R.id.drawer_layout) != null){
-//            if (savedInstanceState != null){
-//                return;
-//            }
-//            if (prefConfig.readLoginStatus()){
-////                getSupportFragmentManager().beginTransaction().add(R.id.drawer_layout,new tg_home()).commit();
-//                Intent intent = new Intent(this, tg_home.class);
-//                startActivity(intent);
-//                finish();
-//            }else {
-//                getSupportFragmentManager().beginTransaction().add(R.id.drawer_layout,new LoginFragment()).commit();
-////                Intent intent = new Intent(this, LoginActivity.class);
-////                startActivity(intent);
-//            }
-//        }
         username = findViewById(R.id.uname);
         password = findViewById(R.id.upass);
         final Button button = findViewById(R.id.logbtn);
@@ -60,13 +44,16 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void Login() {
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.42.198/Reaper/Teacherlogin.php", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.42.209/Reaper/Teacherlogin.php", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
                 if (response.equals("True")) {
+                    UserSes userSes = new UserSes(LoginActivity.this);
+                    userSes.setName(username.getText().toString());
                     Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this,tg_home.class);
+                    intent.putExtra("name",userSes.getName());
                     startActivity(intent);finish();
                 }else if (response.equals("False")){
                     Toast.makeText(LoginActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();

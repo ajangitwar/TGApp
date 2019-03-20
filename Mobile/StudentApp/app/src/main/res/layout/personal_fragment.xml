@@ -1,5 +1,4 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrollView2"
     android:layout_width="match_parent"
@@ -39,7 +38,13 @@
                 android:textStyle="bold" />
         </RelativeLayout>
 
-
+        <TableRow
+            android:layout_marginTop="4dp"
+            android:layout_width="250dp"
+            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:background="#E7D9D9"
+            android:padding="1dp"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -57,16 +62,103 @@
                     android:layout_height="match_parent" >
 
                     <TextView
-                        android:id="@+id/textView19"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:text="Branch"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:text="Roll No.:" />
+
+                    <TextView
+                        android:id="@+id/sid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" "
+                        android:textColor="#000"
+                        android:textSize="18sp" />
+                </TableRow>
+                <TableRow
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:text="Email:" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#000"
+                        android:textSize="18sp" />
+                </TableRow>
+
+                <TableRow
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:text="Mobile" />
+
+                    <TextView
+                        android:id="@+id/mobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:text=" " />
+                </TableRow>
+                <TableRow
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="Per. Addr:"
                         android:textColor="#000"
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/textView15"
+                        android:id="@+id/paddress"
+                        android:layout_width="181dp"
+                        android:layout_height="49dp"
+                        android:text="Computer Science And Engineering"
+                        android:textColor="#000"
+                        android:textSize="18sp" />
+                </TableRow>
+                <TableRow
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="Temp. Addr:"
+                        android:textColor="#000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/taddress"
                         android:layout_width="181dp"
                         android:layout_height="49dp"
                         android:text="Computer Science And Engineering"
@@ -80,21 +172,45 @@
                     android:layout_height="match_parent" >
 
                     <TextView
-                        android:id="@+id/textView20"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
                         android:textColor="#000"
                         android:textSize="18sp"
-                        android:text="Semester" />
+                        android:layout_marginLeft="15dp"
+                        android:text="Gender:" />
 
                     <TextView
-                        android:id="@+id/semester"
+                        android:id="@+id/gender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="6th"
                         android:textColor="#000"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:text=" " />
+                </TableRow>
+
+
+                <TableRow
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:layout_marginLeft="15dp"
+                        android:text="DOB:" />
+
+                    <TextView
+                        android:id="@+id/dob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:text="" />
                 </TableRow>
 
                 <TableRow
@@ -103,21 +219,43 @@
                     android:layout_height="match_parent" >
 
                     <TextView
-                        android:id="@+id/textView21"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:textColor="#000"
                         android:textSize="18sp"
-                        android:text="Year" />
+                        android:text="Blood Group:" />
 
                     <TextView
-                        android:id="@+id/year"
+                        android:id="@+id/bgroup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#000"
                         android:textSize="18sp"
-                        android:text="2019" />
+                        android:text=" " />
+                </TableRow>
+                <TableRow
+                    android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:layout_marginLeft="15dp"
+                        android:text="Height:" />
+
+                    <TextView
+                        android:id="@+id/height"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -126,114 +264,65 @@
                     android:layout_height="match_parent" >
 
                     <TextView
-                        android:id="@+id/textView2"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
                         android:textColor="#000"
                         android:textSize="18sp"
-                        android:layout_marginLeft="15dp"
-                        android:text="Mobile" />
+                        android:text="Weight" />
 
                     <TextView
-                        android:id="@+id/textView1"
+                        android:id="@+id/weight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#000"
                         android:textSize="18sp"
-                        android:text="8975889364" />
+                        android:text=" " />
                 </TableRow>
-
                 <TableRow
                     android:padding="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" >
 
                     <TextView
-                        android:id="@+id/teView21"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:text="Adhar No.:" />
+
+                    <TextView
+                        android:id="@+id/uid"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#000"
                         android:textSize="18sp"
-                        android:layout_marginLeft="15dp"
-                        android:text="Address" />
-
-                    <TextView
-                        android:id="@+id/textVw17"
-                        android:layout_width="100dp"
-                        android:layout_height="50dp"
-                        android:inputType="textPostalAddress"
-                        android:text="41, Balaji Nagar Punapur"
-                        android:textColor="#000"
-                        android:textSize="18sp" />
+                        android:text=" " />
                 </TableRow>
-
                 <TableRow
                     android:padding="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" >
 
                     <TextView
-                        android:id="@+id/teVew21"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:layout_marginLeft="15dp"
-                        android:text="Roll No." />
 
-                    <TextView
-                        android:id="@+id/SID"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:text="TextView" />
-                </TableRow>
-
-                <TableRow
-                    android:padding="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <TextView
-                        android:id="@+id/tView21"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:layout_marginLeft="15dp"
-                        android:text="Year" />
-
-                    <TextView
-                        android:id="@+id/xtView17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000"
-                        android:textSize="18sp"
-                        android:text="TextView" />
-                </TableRow>
-
-                <TableRow
-                    android:padding="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <TextView
-                        android:id="@+id/textVie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
                         android:textColor="#000"
                         android:textSize="18sp"
-                        android:text="Year" />
+                        android:text="PAN no.:" />
 
                     <TextView
-                        android:id="@+id/textVie17"
+                        android:id="@+id/pan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#000"
                         android:textSize="18sp"
-                        android:text="TextView" />
+                        android:text=" " />
                 </TableRow>
             </TableLayout>
 

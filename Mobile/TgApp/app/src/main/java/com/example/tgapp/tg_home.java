@@ -102,9 +102,9 @@ public class tg_home extends AppCompatActivity implements NavigationView.OnNavig
         } else if (id == R.id.nav_notify) {
             fragment = new AppNotification();
         }
-//        else if (id == R.id.nav_send) {
-//            fragment = new StudentList();
-//        }
+        else if (id == R.id.tg_logout) {
+            Logout();
+        }
 
         if (fragment != null){
             FragmentManager fragmentmanager = getSupportFragmentManager();
@@ -127,5 +127,12 @@ public class tg_home extends AppCompatActivity implements NavigationView.OnNavig
         int id = item.getItemId();
         displaySelectedScreen(id);
         return true;
+    }
+    public void Logout(){
+        UserSes userSes = new UserSes(tg_home.this);
+        userSes.removeUser();
+        Intent logoutintent = new Intent(tg_home.this, LoginActivity.class);
+        startActivity(logoutintent);
+        finish();
     }
 }
