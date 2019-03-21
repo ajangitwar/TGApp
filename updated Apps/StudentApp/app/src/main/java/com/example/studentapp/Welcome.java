@@ -12,6 +12,7 @@ public class Welcome extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final UserSes userSes = new UserSes(Welcome.this);
 
         if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.LOLLIPOP) {
             window = this.getWindow();
@@ -23,9 +24,15 @@ public class Welcome extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run(){
-                Intent homeIntent = new Intent(Welcome.this, StudentLogin.class);
-                startActivity(homeIntent);
-                finish();
+                if (userSes.getName() != "") {
+                    Intent homeIntent = new Intent(Welcome.this, StudentHome.class);
+                    startActivity(homeIntent);
+                    finish();
+                }else {
+                    Intent homeIntent = new Intent(Welcome.this, StudentLogin.class);
+                    startActivity(homeIntent);
+                    finish();
+                }
             }
         }, SPLASH_TIME_OUT);
     }

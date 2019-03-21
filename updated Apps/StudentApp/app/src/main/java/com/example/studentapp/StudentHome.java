@@ -94,9 +94,9 @@ public class StudentHome extends AppCompatActivity
         } else if (id == R.id.nav_tginfo) {
             fragment = new TeacherInfo();
         }
-//        else if (id == R.id.nav_send) {
-//            fragment = new StudentList();
-//        }
+        else if (id == R.id.logout) {
+           Logout();
+        }
 
         if (fragment != null){
             FragmentManager fragmentmanager = getSupportFragmentManager();
@@ -120,5 +120,12 @@ public class StudentHome extends AppCompatActivity
         int id = item.getItemId();
         displaySelectedScreen(id);
         return true;
+    }
+    public void Logout(){
+        UserSes userSes = new UserSes(StudentHome.this);
+        userSes.removeUser();
+        Intent logoutintent = new Intent(StudentHome.this, StudentLogin.class);
+        startActivity(logoutintent);
+        finish();
     }
 }

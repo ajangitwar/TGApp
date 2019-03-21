@@ -40,9 +40,11 @@ public class tg_home extends AppCompatActivity implements NavigationView.OnNavig
         View header=navigationView.getHeaderView(0);
         /*View view=navigationView.inflateHeaderView(R.layout.nav_header_main);*/
         name = (TextView)header.findViewById(R.id.user);
-        email = (TextView)header.findViewById(R.id.useremail);
-
         name.setText(userSes.getName());
+
+        email = (TextView)header.findViewById(R.id.useremail);
+        email.setText(userSes.getEmail());
+
 
         displaySelectedScreen(nav_profile);
     }

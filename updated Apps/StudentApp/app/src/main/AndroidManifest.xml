@@ -13,11 +13,11 @@
         android:theme="@style/AppTheme">
         <activity android:name=".form.StudentForm"></activity>
         <activity
-            android:name=".Welcome"
+            android:name=".StudentHome"
             android:label="@string/title_activity_student_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".StudentLogin" />
-        <activity android:name=".StudentHome">
+        <activity android:name=".Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -36,7 +36,7 @@ public class AdapterTest extends RecyclerView.Adapter<AdapterTest.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
 
-//        holder.sid.setText(mdata.get(i).getSID());
+        holder.sid.setText(String.valueOf(mdata.get(i).getSID()));
         holder.name.setText(mdata.get(i).getFullname());
         holder.year.setText(mdata.get(i).getYear());
         holder.semester.setText(mdata.get(i).getSemester());

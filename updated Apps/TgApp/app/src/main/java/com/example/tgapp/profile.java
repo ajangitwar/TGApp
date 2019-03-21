@@ -33,6 +33,7 @@ public class profile extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile,container, false);
         userSes = new UserSes(getContext());
+//        Toast.makeText(getContext(),userSes.getTid(), Toast.LENGTH_SHORT).show();
 
         ParseData();
 
@@ -53,7 +54,7 @@ public class profile extends Fragment {
     }
 
     public void ParseData(){
-        String URL = "http://192.168.43.34/Reaper/getTeacher.php";
+        String URL = "http://192.168.42.207/Reaper/getTeacher.php";
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -64,10 +65,10 @@ public class profile extends Fragment {
                     JSONObject data = jsonArray.getJSONObject(0);
 
                     tid.setText(String.valueOf(data.getInt("TID")));
-//                    salutation.setText(data.getString("salutation"));
-                    fullname.setText(data.getString("Fullname"));
-                    email.setText(data.getString("Email"));
-                    mob.setText(data.getString("Mobile"));
+                    salutation.setText(data.getString("salutation"));
+                    fullname.setText(data.getString("fullname"));
+                    email.setText(data.getString("email"));
+                    mob.setText(data.getString("mobile"));
 
 
 
@@ -89,7 +90,8 @@ public class profile extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String,String>();
-                params.put("name",userSes.getName());
+                params.put("TID",userSes.getTid());
+
                 return params;
             }
         };

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -25,12 +26,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class StudentList extends Fragment{
     RecyclerView myrecyclerview;
     List<StudentModal> lstContact;
     AdapterTest adapterTest;
+    UserSes userSes;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -45,7 +49,7 @@ public class StudentList extends Fragment{
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        userSes = new UserSes(getContext());
         lstContact = new ArrayList<>();
     }
 
@@ -58,8 +62,8 @@ public class StudentList extends Fragment{
 
     void getReports(){
 
-        final StringRequest stringRequest = new StringRequest(Request.Method.GET,
-                "http://192.168.43.34/Reaper/getStudent.php",
+        final StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                "http://192.168.42.207/Reaper/getStudentList.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -96,7 +100,14 @@ public class StudentList extends Fragment{
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        });
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String, String> params = new HashMap<>();
+                params.put("TID",userSes.getTid());
+                return params;
+            }
+        };
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         requestQueue.add(stringRequest);
     }
