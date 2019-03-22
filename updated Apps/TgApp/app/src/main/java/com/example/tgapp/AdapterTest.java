@@ -1,15 +1,18 @@
 package com.example.tgapp;
 
 import android.content.Context;
-        import android.support.annotation.NonNull;
+import android.content.Intent;
+import android.support.annotation.NonNull;
         import android.support.v7.widget.RecyclerView;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
-        import android.widget.TextClock;
+import android.widget.LinearLayout;
+import android.widget.TextClock;
         import android.widget.TextView;
+import android.widget.Toast;
 
-        import java.util.List;
+import java.util.List;
 
 public class AdapterTest extends RecyclerView.Adapter<AdapterTest.MyViewHolder> {
 
@@ -40,6 +43,14 @@ public class AdapterTest extends RecyclerView.Adapter<AdapterTest.MyViewHolder> 
         holder.name.setText(mdata.get(i).getFullname());
         holder.year.setText(mdata.get(i).getYear());
         holder.semester.setText(mdata.get(i).getSemester());
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent homeIntent = new Intent(mContext, demobhau.class);
+                mContext.startActivity(homeIntent);
+
+            }
+        });
 
     }
 
@@ -51,14 +62,16 @@ public class AdapterTest extends RecyclerView.Adapter<AdapterTest.MyViewHolder> 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView sid,name,year,semester;
+        public LinearLayout linearLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            name = (TextView) itemView.findViewById(R.id.fullname);
-            sid = (TextView) itemView.findViewById(R.id.SID);
-            year = (TextView) itemView.findViewById(R.id.year);
-            semester = (TextView) itemView.findViewById(R.id.semester);
+            name =  itemView.findViewById(R.id.fullname);
+            sid =  itemView.findViewById(R.id.SID);
+            year =  itemView.findViewById(R.id.year);
+            semester =  itemView.findViewById(R.id.semester);
+            linearLayout = itemView.findViewById(R.id.linear);
 
 
         }
