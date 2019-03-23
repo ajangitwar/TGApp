@@ -23,6 +23,7 @@ import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.basgeekball.awesomevalidation.utility.RegexTemplate;
 import com.basgeekball.awesomevalidation.utility.custom.SimpleCustomValidation;
 import com.example.studentapp.R;
+import com.example.studentapp.UserSes;
 import com.google.common.collect.Range;
 
 import java.text.ParseException;
@@ -35,6 +36,7 @@ import java.util.Map;
 import static com.example.studentapp.R.id.subbtn;
 
 public class PersonalFormFragment extends Fragment {
+    UserSes userSes;
     Button button;
     EditText Fullname1,Padrs1,Tadrs1,Mob1,Email1,Gender1,Blood1,Dob1,Height1,Weight1,Uid1,Pan1;
     public static final String url = "http://192.168.43.34/android/Student/InsertPersonal.php";
@@ -49,7 +51,8 @@ public class PersonalFormFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_personal_form, container, false);
-
+        userSes = new UserSes(getContext());
+//        Toast.makeText(getContext(), userSes.getSid(), Toast.LENGTH_SHORT).show();
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
 
         button = view.findViewById(R.id.subbtn);
@@ -122,6 +125,7 @@ public class PersonalFormFragment extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String,String>();
+                params.put("SID",userSes.getSid());
                 params.put("Fullname",Fullname);
                 params.put("Paddress",Paddress);
                 params.put("Taddress",Taddress);
@@ -166,7 +170,7 @@ public class PersonalFormFragment extends Fragment {
                         try {
                             Calendar calendarBirthday = Calendar.getInstance();
                             Calendar calendarToday = Calendar.getInstance();
-                            calendarBirthday.setTime(new SimpleDateFormat("dd/MM/yyyy", Locale.US).parse(input));
+                            calendarBirthday.setTime(new SimpleDateFormat("dd.MM.yyyy", Locale.US).parse(input));
                             int yearOfToday = calendarToday.get(Calendar.YEAR);
                             int yearOfBirthday = calendarBirthday.get(Calendar.YEAR);
                             if (yearOfToday - yearOfBirthday > 18) {

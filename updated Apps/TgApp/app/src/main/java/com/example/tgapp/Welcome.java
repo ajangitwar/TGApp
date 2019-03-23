@@ -29,7 +29,7 @@ public class Welcome extends AppCompatActivity {
                     startActivity(homeIntent);
                     finish();
                 }else {
-                    Intent homeIntent = new Intent(Welcome.this, LoginActivity.class);
+                    Intent homeIntent = new Intent(Welcome.this, tg_home.class);
                     startActivity(homeIntent);
                     finish();
                 }

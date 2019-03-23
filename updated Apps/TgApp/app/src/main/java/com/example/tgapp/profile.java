@@ -54,7 +54,7 @@ public class profile extends Fragment {
     }
 
     public void ParseData(){
-        String URL = "http://192.168.42.207/Reaper/getTeacher.php";
+        String URL = "http://192.168.43.34/Reaper/getTeacher.php";
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

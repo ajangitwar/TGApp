@@ -65,7 +65,7 @@ public class StudentLogin extends AppCompatActivity {
     }
     private void Login() {
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.42.207/Reaper/StudentLogin.php", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.43.34/Reaper/Studentlogin.php", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try{
@@ -78,7 +78,7 @@ public class StudentLogin extends AppCompatActivity {
                         UserSes userSes = new UserSes(StudentLogin.this);
 //                        Toast.makeText(LoginActivity.this, String.valueOf(data.getInt("TID")), Toast.LENGTH_SHORT).show();
                         userSes.setName(data.getString("fullname"));
-                        userSes.setSid(String.valueOf(data.getInt("SID")));
+                        userSes.setSid(data.getString("SID"));
 
 
                         Toast.makeText(StudentLogin.this, "Login Successfully", Toast.LENGTH_SHORT).show();

@@ -32,7 +32,6 @@
                 android:layout_marginRight="0dp"
                 android:layout_span="2"
                 android:gravity="center"
-                android:text="Abhishek Jangitwar"
                 android:textColor="#000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -139,7 +138,6 @@
                         android:id="@+id/paddress"
                         android:layout_width="181dp"
                         android:layout_height="49dp"
-                        android:text="Computer Science And Engineering"
                         android:textColor="#000"
                         android:textSize="18sp" />
                 </TableRow>
@@ -161,7 +159,6 @@
                         android:id="@+id/taddress"
                         android:layout_width="181dp"
                         android:layout_height="49dp"
-                        android:text="Computer Science And Engineering"
                         android:textColor="#000"
                         android:textSize="18sp" />
                 </TableRow>
@@ -270,7 +267,7 @@
                         android:layout_marginLeft="15dp"
                         android:textColor="#000"
                         android:textSize="18sp"
-                        android:text="Weight" />
+                        android:text="Weight:" />
 
                     <TextView
                         android:id="@+id/weight"

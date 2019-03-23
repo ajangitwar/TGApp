@@ -64,7 +64,7 @@ public class Attendance extends Fragment {
     void getReports(){
 
         final StringRequest stringRequest = new StringRequest(Request.Method.POST,
-                "http://192.168.42.207/Reaper/getStudentList.php",
+                "http://192.168.43.34/Reaper/getStudentList.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

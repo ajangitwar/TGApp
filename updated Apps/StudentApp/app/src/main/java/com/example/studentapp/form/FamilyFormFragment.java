@@ -21,11 +21,13 @@ import com.android.volley.toolbox.StringRequest;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.example.studentapp.R;
+import com.example.studentapp.UserSes;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class FamilyFormFragment extends Fragment {
-
+    UserSes userSes;
     Button button;
     TextInputLayout Faname,Famob,Faocc,Maname,Mamob,Maocc;
     public static final String url = "http://192.168.43.34/android/Student/InsertFamily.php";
@@ -41,6 +43,7 @@ public class FamilyFormFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_family_form, container, false);
+        userSes = new UserSes(getContext());
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
 
         button = view.findViewById(R.id.subbtn);
@@ -96,6 +99,7 @@ public class FamilyFormFragment extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String,String>();
+                params.put("SID",userSes.getSid());
                 params.put("FName",FName);
                 params.put("FMobNo",FMobNo);
                 params.put("FOcc",FOcc);

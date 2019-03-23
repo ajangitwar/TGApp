@@ -28,7 +28,7 @@ public class UserSes {
     }
 
     public String getSid() {
-        sid = sharedPreferences.getString("id","");
+        sid = sharedPreferences.getString("SID","");
         return sid;
     }
 

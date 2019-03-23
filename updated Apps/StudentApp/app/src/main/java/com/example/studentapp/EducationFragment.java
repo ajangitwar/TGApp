@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -19,7 +20,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class EducationFragment extends Fragment {
+    UserSes userSes;
     View view;
     TextView sscinsti,hscinsti,ssc,hsc,sscyr,hscyr,jee,mhtcet;
     TextView beinsti,branch,sem1,sem2,sem3,sem4,sem5,sem6,sem7,sem8,backlog;
@@ -32,7 +37,7 @@ public class EducationFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
        view = inflater.inflate(R.layout.education_fragment,container,false);
-
+        userSes = new UserSes(getContext());
         sscinsti = view.findViewById(R.id.sscinsti);
         hscinsti = view.findViewById(R.id.hscinsti);
         ssc = view.findViewById(R.id.ssc);
@@ -55,28 +60,23 @@ public class EducationFragment extends Fragment {
 
         getGeneralEduInfo();
         getBEInfo();
+        eduInfo();
 
        return view;
     }
-    public void getGeneralEduInfo(){
-        String URL = "http://192.168.42.221/Reaper/getTeacher.php";
+    public void eduInfo(){
+        String URL = "http://192.168.43.34/android/Student/FetchEducation.php";
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
 
-                    JSONArray jsonArray = jsonObject.getJSONArray("GeneralEduObj");
+                    JSONArray jsonArray = jsonObject.getJSONArray("EduObj");
                     JSONObject data = jsonArray.getJSONObject(0);
-
-                    sscinsti.setText(String.valueOf(data.getInt("sscinsti")));
-                    hscinsti.setText(data.getString("hscinsti"));
-                    ssc.setText(data.getString("ssc"));
-                    hsc.setText(data.getString("hsc"));
-                    sscyr.setText(data.getString("sscyr"));
-                    hscyr.setText(data.getString("hscyr"));
-                    jee.setText(data.getString("jee"));
-                    mhtcet.setText(data.getString("mhtcet"));
+//                    sid.setText(String.valueOf(data.getString("SID")));
+                    jee.setText(data.getString("JEE"));
+                    mhtcet.setText(data.getString("MHTCET"));
 
                 } catch (JSONException e) {
 //                    Toast.makeText(getContext(), "exception ala", Toast.LENGTH_SHORT).show();
@@ -88,31 +88,82 @@ public class EducationFragment extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
             }
-        });
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String,String>();
+                params.put("SID",userSes.getSid());
+
+                return params;
+            }
+        };
+        Volley.newRequestQueue(getContext()).add(request);
+    }
+
+    public void getGeneralEduInfo(){
+        String URL = "http://192.168.43.34/android/Student/FetchGen.php";
+        StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+
+                    JSONArray jsonArray = jsonObject.getJSONArray("GenObj");
+                    JSONObject data = jsonArray.getJSONObject(0);
+
+//                    sid.setText(String.valueOf(data.getString("SID")));
+                    sscinsti.setText(String.valueOf(data.getInt("InstiNameX")));
+                    hscinsti.setText(data.getString("InstiNameXII"));
+                    ssc.setText(data.getString("PercentageX"));
+                    hsc.setText(data.getString("PerXII"));
+                    sscyr.setText(data.getString("YearX"));
+                    hscyr.setText(data.getString("YearXII"));
+//                    jee.setText(data.getString("jee"));
+//                    mhtcet.setText(data.getString("mhtcet"));
+
+                } catch (JSONException e) {
+//                    Toast.makeText(getContext(), "exception ala", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String,String>();
+                params.put("SID",userSes.getSid());
+
+                return params;
+            }
+        };
         Volley.newRequestQueue(getContext()).add(request);
     }
     public void getBEInfo(){
-        String URL = "http://192.168.42.228/Reaper/getTeacher.php";
+        String URL = "http://192.168.43.34/android/Student/FetchBe.php";
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
 
-                    JSONArray jsonArray = jsonObject.getJSONArray("BEEduObj");
+                    JSONArray jsonArray = jsonObject.getJSONArray("BeObj");
                     JSONObject data = jsonArray.getJSONObject(0);
-
-                    beinsti.setText(String.valueOf(data.getInt("beinsti")));
-                    branch.setText(data.getString("branch"));
-                    sem1.setText(data.getString("sem1"));
-                    sem2.setText(data.getString("sem2"));
-                    sem3.setText(data.getString("sem3"));
-                    sem4.setText(data.getString("sem4"));
-                    sem5.setText(data.getString("sem5"));
-                    sem6.setText(data.getString("sem6"));
-                    sem7.setText(data.getString("sem7"));
-                    sem8.setText(data.getString("sem8"));
-                    backlog.setText(data.getString("backlog"));
+//                    sid.setText(String.valueOf(data.getString("SID")));
+                    beinsti.setText(String.valueOf(data.getInt("InstiName")));
+                    branch.setText(data.getString("Branch"));
+                    sem1.setText(data.getString("Iper"));
+                    sem2.setText(data.getString("IIper"));
+                    sem3.setText(data.getString("IIIper"));
+                    sem4.setText(data.getString("IVper"));
+                    sem5.setText(data.getString("Vper"));
+                    sem6.setText(data.getString("VIper"));
+                    sem7.setText(data.getString("VIIper"));
+                    sem8.setText(data.getString("VIIIper"));
+                    backlog.setText(data.getString("backlogs"));
 
                 } catch (JSONException e) {
 //                    Toast.makeText(getContext(), "exception ala", Toast.LENGTH_SHORT).show();
@@ -124,7 +175,15 @@ public class EducationFragment extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
             }
-        });
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String,String>();
+                params.put("SID",userSes.getSid());
+
+                return params;
+            }
+        };
         Volley.newRequestQueue(getContext()).add(request);
     }
 }

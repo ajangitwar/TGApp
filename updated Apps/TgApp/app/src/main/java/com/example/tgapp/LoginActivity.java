@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void Login() {
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.42.207/Reaper/Teacherlogin.php", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.43.34/Reaper/Teacherlogin.php", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try{

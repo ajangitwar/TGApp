@@ -22,12 +22,13 @@ import com.android.volley.toolbox.StringRequest;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.example.studentapp.R;
+import com.example.studentapp.UserSes;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class EducationFormFragment extends Fragment {
-
+    UserSes userSes;
     Button button,button1,button2;
     EditText Jee,Mhtcet,Xinstname,Xyear,Xper,XIIinstname,XIIyear,XIIper,BEinstname,Branch1,Iperc,IIperc,IIIperc,IVperc,Vperc,VIperc,VIIperc,VIIIperc,Back;
     public static final String url = "http://192.168.43.34/android/Student/InsertEducation.php";
@@ -47,6 +48,7 @@ public class EducationFormFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_education_form, container, false);
+        userSes = new UserSes(getContext());
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
 
         button = view.findViewById(R.id.subbtn);
@@ -163,6 +165,7 @@ public class EducationFormFragment extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String,String>();
+                params.put("SID",userSes.getSid());
                 params.put("JEE",JEE);
                 params.put("MHTCET",MHTCET);
 
@@ -213,6 +216,7 @@ public class EducationFormFragment extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String,String>();
+                params.put("SID",userSes.getSid());
                 params.put("InstiNameX",InstiNameX);
                 params.put("YearX",YearX);
                 params.put("PercentageX",PercentageX);
@@ -277,6 +281,7 @@ public class EducationFormFragment extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String,String>();
+                params.put("SID",userSes.getSid());
                 params.put("InstiName",InstiName);
                 params.put("Branch",Branch);
                 params.put("Iper",Iper);
