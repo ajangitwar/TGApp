@@ -81,7 +81,7 @@ public class StudentHome extends AppCompatActivity
         } else if (id == R.id.nav_attend) {
             fragment = new Attendance();
         } else if (id == R.id.nav_notify) {
-            fragment = new Notification();
+//            fragment = new Notification();
         } else if (id == R.id.nav_tginfo) {
             fragment = new TeacherInfo();
         }

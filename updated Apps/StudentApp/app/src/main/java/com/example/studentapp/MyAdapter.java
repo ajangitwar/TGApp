@@ -29,9 +29,6 @@ public class MyAdapter  extends FragmentPagerAdapter {
                 return new FamilyFragment();
             case 3:
                 return new FragmentTechnical();
-            case 4:
-                return new FragmentOther();
-
 
         }
         return null;
@@ -54,9 +51,6 @@ public class MyAdapter  extends FragmentPagerAdapter {
                 return "Family";
             case 3:
                 return "Technical";
-            case 4:
-                return "Other Info";
-
 
         }
 

@@ -3,22 +3,22 @@ package com.example.tgapp;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-        import android.support.v7.widget.RecyclerView;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
 
-public class AdapterTest extends RecyclerView.Adapter<AdapterTest.MyViewHolder> {
+public class StudentListAdapter extends RecyclerView.Adapter<StudentListAdapter.MyViewHolder> {
 
 
     Context mContext;
     List<StudentModal> mdata;
 
-    public AdapterTest(Context mContext, List<StudentModal> mdata) {
+    public StudentListAdapter(Context mContext, List<StudentModal> mdata) {
         this.mContext = mContext;
         this.mdata = mdata;
     }
@@ -36,7 +36,7 @@ public class AdapterTest extends RecyclerView.Adapter<AdapterTest.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
-    final String name  = mdata.get(i).getFullname();
+        final String name = mdata.get(i).getFullname();
         holder.sid.setText(String.valueOf(mdata.get(i).getSID()));
         holder.name.setText(mdata.get(i).getFullname());
         holder.year.setText(mdata.get(i).getYear());
@@ -44,7 +44,7 @@ public class AdapterTest extends RecyclerView.Adapter<AdapterTest.MyViewHolder> 
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent homeIntent = new Intent(mContext, demobhau.class);
+                Intent homeIntent = new Intent(mContext, StudentDetails.class);
                 homeIntent.putExtra("name",name);
                 mContext.startActivity(homeIntent);
 

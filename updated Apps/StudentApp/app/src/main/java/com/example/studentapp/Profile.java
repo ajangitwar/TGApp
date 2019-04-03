@@ -25,7 +25,7 @@ public class Profile extends  Fragment{
 
     public  static TabLayout tabLayout;
     public  static ViewPager viewPager;
-    public  static int int_items= 5;
+    public  static int int_items= 4;
 
 
 

@@ -1,6 +1,5 @@
 package com.example.studentapp.form;
 
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -13,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -22,8 +20,11 @@ import com.android.volley.toolbox.StringRequest;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.example.studentapp.R;
+<<<<<<< Updated upstream
 import com.example.studentapp.UserSes;
 
+=======
+>>>>>>> Stashed changes
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +32,7 @@ public class EducationFormFragment extends Fragment {
     UserSes userSes;
     Button button,button1,button2;
     EditText Jee,Mhtcet,Xinstname,Xyear,Xper,XIIinstname,XIIyear,XIIper,BEinstname,Branch1,Iperc,IIperc,IIIperc,IVperc,Vperc,VIperc,VIIperc,VIIIperc,Back;
+
     public static final String url = "http://192.168.43.34/android/Student/InsertEducation.php";
     public static final String url1 = "http://192.168.43.34/android/Student/InsertGen.php";
     public static final String url2 = "http://192.168.43.34/android/Student/InsertBE.php";
@@ -38,11 +40,9 @@ public class EducationFormFragment extends Fragment {
 
     AlertDialog.Builder builder;
 
-
     public EducationFormFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

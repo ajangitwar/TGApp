@@ -1,18 +1,23 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrollView2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F7F4F2"
     android:orientation="vertical">
 
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
         android:orientation="vertical">
+        <!--<android.support.v7.widget.Toolbar-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@color/colorPrimaryDark">-->
+
+        <!--</android.support.v7.widget.Toolbar>-->
 
 
         <android.support.v7.widget.CardView
@@ -62,16 +67,9 @@
                         android:gravity="center"
                         android:padding="5dp">
 
+
                         <TextView
-                            android:id="@+id/salu"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Prof."
-                            android:gravity="center"
-                            android:textColor="#000"
-                            android:textSize="24sp" />
-                        <TextView
-                            android:id="@+id/get"
+                            android:id="@+id/name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Abhishek jangitwar"
@@ -166,7 +164,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="15dp"
-                            android:text="Mobile :"
+                            android:text="Adhar :"
                             android:textColor="#000"
                             android:textSize="18sp" />
 
@@ -174,7 +172,7 @@
                             android:id="@+id/textView1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="8975889364"
+                            android:text="2020121245450"
                             android:textColor="#000"
                             android:textSize="18sp" />
                     </TableRow>

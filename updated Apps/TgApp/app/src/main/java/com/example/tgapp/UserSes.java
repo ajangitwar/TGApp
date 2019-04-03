@@ -9,7 +9,7 @@ public class UserSes {
 
     private SharedPreferences sharedPreferences;
     private Context context;
-    public UserSes(Context context){
+    public UserSes (Context context){
         this.context = context;
         sharedPreferences = context.getSharedPreferences("userinfo",Context.MODE_PRIVATE);
     }

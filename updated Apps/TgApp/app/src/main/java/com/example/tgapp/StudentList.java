@@ -33,13 +33,13 @@ import java.util.Map;
 public class StudentList extends Fragment{
     RecyclerView myrecyclerview;
     List<StudentModal> lstContact;
-    AdapterTest adapterTest;
+    StudentListAdapter adapterTest;
     UserSes userSes;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view  = inflater.inflate(R.layout.fragment_studentlist,container, false);
-        adapterTest = new AdapterTest(getContext(),lstContact);
+        adapterTest = new StudentListAdapter(getContext(),lstContact);
         myrecyclerview = (RecyclerView) view.findViewById(R.id.recyclesStd);
         myrecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
                   getReports();
@@ -63,7 +63,7 @@ public class StudentList extends Fragment{
     void getReports(){
 
         final StringRequest stringRequest = new StringRequest(Request.Method.POST,
-                "http://192.168.43.34/Reaper/getStudentList.php",
+                "http://192.168.42.25/android/Reaper/getStudentList.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -89,7 +89,7 @@ public class StudentList extends Fragment{
                                 c.setSemester(obj.getString("semester"));
                                 lstContact.add(c);
                             }
-                            AdapterTest recyclerViewAdapter = new AdapterTest(getContext(),lstContact);
+                            StudentListAdapter recyclerViewAdapter = new StudentListAdapter(getContext(),lstContact);
                             myrecyclerview.setAdapter(recyclerViewAdapter);
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -98,7 +98,7 @@ public class StudentList extends Fragment{
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }){
             @Override

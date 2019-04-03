@@ -1,9 +1,15 @@
 package com.example.tgapp;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -31,25 +37,31 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window = this.getWindow();
             window.setStatusBarColor(this.getResources().getColor(R.color.navColor));
         }
 
-        username = findViewById(R.id.uname);
-        password = findViewById(R.id.upass);
-        final Button button = findViewById(R.id.logbtn);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Login();
-            }
-        });
+        if(!isConnected(LoginActivity.this)) buildDialog(LoginActivity.this).show();
+        else {
+            setContentView(R.layout.activity_login);
+
+
+            username = findViewById(R.id.uname);
+            password = findViewById(R.id.upass);
+            final Button button = findViewById(R.id.logbtn);
+            button.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Login();
+                }
+            });
+        }
 
     }
     private void Login() {
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.43.34/Reaper/Teacherlogin.php", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.42.25/android/Reaper/Teacherlogin.php", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try{
@@ -99,4 +111,40 @@ public class LoginActivity extends AppCompatActivity {
         Volley.newRequestQueue(LoginActivity.this).add(stringRequest);
 
     }
+
+    public boolean isConnected(Context context) {
+
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        assert cm != null;
+        NetworkInfo netinfo = cm.getActiveNetworkInfo();
+
+        if (netinfo != null && netinfo.isConnectedOrConnecting()) {
+            android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+            if ((mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting()))
+                return true;
+            else return false;
+        } else
+            return false;
+    }
+
+    public AlertDialog.Builder buildDialog(Context c) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(c);
+        builder.setTitle("No Internet Connection");
+        builder.setMessage("Unable to detect Mobile Data or wifi,please try again. Press ok to Exit");
+
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                finish();
+            }
+        });
+
+        return builder;
+    }
+
 }

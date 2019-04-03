@@ -29,9 +29,6 @@ public class MyAdapterIs extends FragmentPagerAdapter {
                 return new FamilyFormFragment();
             case 3:
                 return new TechnicalFormFragment();
-            case 4:
-                return new OtherFormFragment();
-
 
         }
         return null;
@@ -54,9 +51,6 @@ public class MyAdapterIs extends FragmentPagerAdapter {
                 return "Family";
             case 3:
                 return "Technical";
-            case 4:
-                return "Other Info";
-
         }
 
         return null;

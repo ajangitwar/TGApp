@@ -15,11 +15,13 @@ import android.widget.TextView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import static com.example.tgapp.R.id.nav_profile;
 
 public class tg_home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     TextView name,email;
+    private long backPressedTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +57,13 @@ public class tg_home extends AppCompatActivity implements NavigationView.OnNavig
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            if (backPressedTime + 2000 > System.currentTimeMillis()) {
+                super.onBackPressed();
+                return;
+            }else {
+                Toast.makeText(this, "Press Back Again To Exit !", Toast.LENGTH_SHORT).show();
+            }
+            backPressedTime = System.currentTimeMillis();
         }
     }
 

@@ -39,7 +39,7 @@ public class profile extends Fragment {
 
         tid = view.findViewById(R.id.tid);
         email = view.findViewById(R.id.email);
-        fullname = view.findViewById(R.id.fullname);
+        fullname = view.findViewById(R.id.get);
         salutation = view.findViewById(R.id.salu);
         mob = view.findViewById(R.id.mob);
 
@@ -54,7 +54,7 @@ public class profile extends Fragment {
     }
 
     public void ParseData(){
-        String URL = "http://192.168.43.34/Reaper/getTeacher.php";
+        String URL = "http://192.168.42.25/android/Reaper/getTeacher.php";
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -70,15 +70,11 @@ public class profile extends Fragment {
                     email.setText(data.getString("email"));
                     mob.setText(data.getString("mobile"));
 
-
-
                 } catch (JSONException e) {
                     Toast.makeText(getContext(), "exception ala", Toast.LENGTH_SHORT).show();
 
                     e.printStackTrace();
                 }
-
-
             }
         }, new Response.ErrorListener() {
             @Override
@@ -96,6 +92,5 @@ public class profile extends Fragment {
             }
         };
         Volley.newRequestQueue(getActivity()).add(request);
-
     }
 }
